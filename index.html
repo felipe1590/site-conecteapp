@@ -784,7 +784,7 @@
                   Estamos aqui para te ajudar, se precisar tirar alguma duvida.
                   Por favor entre en contato, será um prazer poder te axiliar.
                 </p>
-                <form>
+                <form action="https://formspree.io/f/xjvnnvrz" method="post">
                   <div class="row g-3">
                     <div class="col-md-6">
                       <div class="form-floating">
@@ -792,7 +792,9 @@
                           type="text"
                           class="form-control"
                           id="name"
+                          name="name"
                           placeholder="Seu Nome"
+                          required
                         />
                         <label for="name">Seu Nome</label>
                       </div>
@@ -803,7 +805,9 @@
                           type="email"
                           class="form-control"
                           id="email"
+                          name="email"
                           placeholder="Seu Email"
+                          required
                         />
                         <label for="email">Seu Email</label>
                       </div>
@@ -814,7 +818,9 @@
                           type="text"
                           class="form-control"
                           id="subject"
-                          placeholder="Subject"
+                          name="subject"
+                          placeholder="Assunto"
+                          required
                         />
                         <label for="subject">Assunto</label>
                       </div>
@@ -823,9 +829,11 @@
                       <div class="form-floating">
                         <textarea
                           class="form-control"
-                          placeholder="Leave a message here"
+                          placeholder="Deixe sua mensagem aqui"
                           id="message"
+                          name="message"
                           style="height: 150px"
+                          required
                         ></textarea>
                         <label for="message">Mensagem</label>
                       </div>
@@ -840,11 +848,13 @@
                     </div>
                   </div>
                 </form>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <!-- Contact End -->
 
       <!-- Footer Start -->
