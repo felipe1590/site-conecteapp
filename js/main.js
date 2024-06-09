@@ -97,40 +97,40 @@
   });
 })(jQuery);
 
-// Pega o modal
-var modal = document.getElementById("myModal");
-var modal2 = document.getElementById("myModal2");
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.getElementById("myModal");
+  var termsBtn = document.getElementById("openTermsBtn");
+  var conditionsBtn = document.getElementById("openConditionsBtn");
+  var span = document.getElementsByClassName("close")[0];
+  var popupContent = document.getElementById("popupContent");
 
-// Pega o botão que abre o modal
-var btn = document.getElementById("myBtn");
-var btn2 = document.getElementById("myBtn2");
+  termsBtn.onclick = function () {
+    loadContent("text/termos.html");
+  };
 
-// Pega o elemento <span> que fecha o modal
-var span = document.getElementsByClassName("close")[0];
-var span2 = document.getElementsByClassName("close")[1];
+  conditionsBtn.onclick = function () {
+    loadContent("text/condicoes.html");
+  };
 
-// Quando o usuário clicar no botão, abre o modal
-btn.onclick = function () {
-  modal.style.display = "block";
-};
-
-btn2.onclick = function () {
-  modal2.style.display = "block";
-};
-
-// Quando o usuário clicar no <span> (x), fecha o modal
-span.onclick = function () {
-  modal.style.display = "none";
-  modal2.style.display = "none";
-};
-
-span2.onclick = function () {
-  modal2.style.display = "none";
-};
-
-// Quando o usuário clicar fora do modal, fecha o modal
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  function loadContent(url) {
+    fetch(url)
+      .then((response) => response.text())
+      .then((data) => {
+        popupContent.innerHTML = data;
+        modal.style.display = "block";
+      })
+      .catch((error) => {
+        console.error("Erro ao carregar o arquivo HTML:", error);
+      });
   }
-};
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+});
