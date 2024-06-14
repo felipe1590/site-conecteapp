@@ -47,8 +47,10 @@
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $(".back-to-top").fadeIn("slow");
+      $(".whatsapp").fadeIn("slow");
     } else {
       $(".back-to-top").fadeOut("slow");
+      $(".whatsapp").fadeOut("slow");
     }
   });
   $(".back-to-top").click(function () {

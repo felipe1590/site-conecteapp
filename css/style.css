@@ -166,6 +166,20 @@ h6,
   );
 }
 
+.whatsapp {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 105px;
+  z-index: 99;
+  border: none;
+  background: linear-gradient(
+    to bottom right,
+    var(--primary),
+    var(--secondary)
+  );
+}
+
 /*** Navbar ***/
 .navbar-light .navbar-nav .nav-link {
   position: relative;
